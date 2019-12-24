@@ -6,7 +6,13 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["gitea"],
+  "keywords": [
+    "gitea"
+  ],
   "author": "jauntywunderkind",
-  "license": "MIT"
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "ini": "^1.3.5"
+  }
 }
