@@ -27,743 +27,742 @@ spec:
             {{- toYaml .Values.securityContext | nindent 12 }}
           env:
           - name: APP_NAME
-            value: {{ Values.appName }}
+            value: "{{ .Values.appName }}"
           - name: RUN_USER
-            value: {{ Values.runUser }}
+            value: "{{ .Values.runUser }}"
           - name: RUN_MODE
-            value: {{ Values.runMode }}
+            value: "{{ .Values.runMode }}"
           - name: ROOT
-            value: {{ Values.repository.root }}
+            value: "{{ .Values.repository.root }}"
           - name: SCRIPT_TYPE
-            value: {{ Values.repository.scriptType }}
+            value: "{{ .Values.repository.scriptType }}"
           - name: ANSI_CHARSET
-            value: {{ Values.repository.ansiCharset }}
+            value: "{{ .Values.repository.ansiCharset }}"
           - name: FORCE_PRIVATE
-            value: {{ Values.repository.forcePrivate }}
+            value: "{{ .Values.repository.forcePrivate }}"
           - name: DEFAULT_PRIVATE
-            value: {{ Values.repository.defaultPrivate }}
+            value: "{{ .Values.repository.defaultPrivate }}"
           - name: MAX_CREATION_LIMIT
-            value: {{ Values.repository.maxCreationLimit }}
+            value: "{{ .Values.repository.maxCreationLimit }}"
           - name: MIRROR_QUEUE_LENGTH
-            value: {{ Values.repository.mirrorQueueLength }}
+            value: "{{ .Values.repository.mirrorQueueLength }}"
           - name: PULL_REQUEST_QUEUE_LENGTH
-            value: {{ Values.repository.pullRequestQueueLength }}
+            value: "{{ .Values.repository.pullRequestQueueLength }}"
           - name: PREFERRED_LICENSES
-            value: {{ Values.repository.preferredLicenses }}
+            value: "{{ .Values.repository.preferredLicenses }}"
           - name: DISABLE_HTTP_GIT
-            value: {{ Values.repository.disableHttpGit }}
+            value: "{{ .Values.repository.disableHttpGit }}"
           - name: ACCESS_CONTROL_ALLOW_ORIGIN
-            value: {{ Values.repository.accessControlAllowOrigin }}
+            value: "{{ .Values.repository.accessControlAllowOrigin }}"
           - name: USE_COMPAT_SSH_URI
-            value: {{ Values.repository.useCompatSshUri }}
+            value: "{{ .Values.repository.useCompatSshUri }}"
           - name: DEFAULT_CLOSE_ISSUES_VIA_COMMITS_IN_ANY_BRANCH
-            value: {{ Values.repository.defaultCloseIssuesViaCommitsInAnyBranch }}
+            value: "{{ .Values.repository.defaultCloseIssuesViaCommitsInAnyBranch }}"
           - name: ENABLE_PUSH_CREATE_USER
-            value: {{ Values.repository.enablePushCreateUser }}
+            value: "{{ .Values.repository.enablePushCreateUser }}"
           - name: ENABLE_PUSH_CREATE_ORG
-            value: {{ Values.repository.enablePushCreateOrg }}
+            value: "{{ .Values.repository.enablePushCreateOrg }}"
           - name: LINE_WRAP_EXTENSIONS
-            value: {{ Values.repository.editor.lineWrapExtensions }}
+            value: "{{ .Values.repository.editor.lineWrapExtensions }}"
           - name: PREVIEWABLE_FILE_MODES
-            value: {{ Values.repository.editor.previewableFileModes }}
+            value: "{{ .Values.repository.editor.previewableFileModes }}"
           - name: LOCAL_COPY_PATH
-            value: {{ Values.repository.local.localCopyPath }}
+            value: "{{ .Values.repository.local.localCopyPath }}"
           - name: LOCAL_WIKI_PATH
-            value: {{ Values.repository.local.localWikiPath }}
+            value: "{{ .Values.repository.local.localWikiPath }}"
           - name: ENABLED
-            value: {{ Values.repository.upload.enabled }}
+            value: "{{ .Values.repository.upload.enabled }}"
           - name: TEMP_PATH
-            value: {{ Values.repository.upload.tempPath }}
+            value: "{{ .Values.repository.upload.tempPath }}"
           - name: ALLOWED_TYPES
-            value: {{ Values.repository.upload.allowedTypes }}
+            value: "{{ .Values.repository.upload.allowedTypes }}"
           - name: FILE_MAX_SIZE
-            value: {{ Values.repository.upload.fileMaxSize }}
+            value: "{{ .Values.repository.upload.fileMaxSize }}"
           - name: MAX_FILES
-            value: {{ Values.repository.upload.maxFiles }}
+            value: "{{ .Values.repository.upload.maxFiles }}"
           - name: WORK_IN_PROGRESS_PREFIXES
-            value: {{ Values.repository.pullRequest.workInProgressPrefixes }}
+            value: "{{ .Values.repository.pullRequest.workInProgressPrefixes }}"
           - name: CLOSE_KEYWORDS
-            value: {{ Values.repository.pullRequest.closeKeywords }}
+            value: "{{ .Values.repository.pullRequest.closeKeywords }}"
           - name: REOPEN_KEYWORDS
-            value: {{ Values.repository.pullRequest.reopenKeywords }}
+            value: "{{ .Values.repository.pullRequest.reopenKeywords }}"
           - name: LOCK_REASONS
-            value: {{ Values.repository.issue.lockReasons }}
+            value: "{{ .Values.repository.issue.lockReasons }}"
           - name: SIGNING_KEY
-            value: {{ Values.repository.signing.signingKey }}
+            value: "{{ .Values.repository.signing.signingKey }}"
           - name: SIGNING_NAME
-            value: {{ Values.repository.signing.signingName }}
+            value: "{{ .Values.repository.signing.signingName }}"
           - name: SIGNING_EMAIL
-            value: {{ Values.repository.signing.signingEmail }}
+            value: "{{ .Values.repository.signing.signingEmail }}"
           - name: INITIAL_COMMIT
-            value: {{ Values.repository.signing.initialCommit }}
+            value: "{{ .Values.repository.signing.initialCommit }}"
           - name: CRUD_ACTIONS
-            value: {{ Values.repository.signing.crudActions }}
+            value: "{{ .Values.repository.signing.crudActions }}"
           - name: WIKI
-            value: {{ Values.repository.signing.wiki }}
+            value: "{{ .Values.repository.signing.wiki }}"
           - name: MERGES
-            value: {{ Values.repository.signing.merges }}
+            value: "{{ .Values.repository.signing.merges }}"
           - name: ENABLED
-            value: {{ Values.cors.enabled }}
+            value: "{{ .Values.cors.enabled }}"
           - name: SCHEME
-            value: {{ Values.cors.scheme }}
+            value: "{{ .Values.cors.scheme }}"
           - name: ALLOW_DOMAIN
-            value: {{ Values.cors.allowDomain }}
+            value: "{{ .Values.cors.allowDomain }}"
           - name: ALLOW_SUBDOMAIN
-            value: {{ Values.cors.allowSubdomain }}
+            value: "{{ .Values.cors.allowSubdomain }}"
           - name: METHODS
-            value: {{ Values.cors.methods }}
+            value: "{{ .Values.cors.methods }}"
           - name: MAX_AGE
-            value: {{ Values.cors.maxAge }}
+            value: "{{ .Values.cors.maxAge }}"
           - name: ALLOW_CREDENTIALS
-            value: {{ Values.cors.allowCredentials }}
+            value: "{{ .Values.cors.allowCredentials }}"
           - name: EXPLORE_PAGING_NUM
-            value: {{ Values.ui.explorePagingNum }}
+            value: "{{ .Values.ui.explorePagingNum }}"
           - name: ISSUE_PAGING_NUM
-            value: {{ Values.ui.issuePagingNum }}
+            value: "{{ .Values.ui.issuePagingNum }}"
           - name: FEED_MAX_COMMIT_NUM
-            value: {{ Values.ui.feedMaxCommitNum }}
+            value: "{{ .Values.ui.feedMaxCommitNum }}"
           - name: GRAPH_MAX_COMMIT_NUM
-            value: {{ Values.ui.graphMaxCommitNum }}
+            value: "{{ .Values.ui.graphMaxCommitNum }}"
           - name: CODE_COMMENT_LINES
-            value: {{ Values.ui.codeCommentLines }}
+            value: "{{ .Values.ui.codeCommentLines }}"
           - name: THEME_COLOR_META_TAG
-            value: {{ Values.ui.themeColorMetaTag }}
+            value: "{{ .Values.ui.themeColorMetaTag }}"
           - name: MAX_DISPLAY_FILE_SIZE
-            value: {{ Values.ui.maxDisplayFileSize }}
+            value: "{{ .Values.ui.maxDisplayFileSize }}"
           - name: SHOW_USER_EMAIL
-            value: {{ Values.ui.showUserEmail }}
+            value: "{{ .Values.ui.showUserEmail }}"
           - name: DEFAULT_THEME
-            value: {{ Values.ui.defaultTheme }}
+            value: "{{ .Values.ui.defaultTheme }}"
           - name: THEMES
-            value: {{ Values.ui.themes }}
-          - name: : For the whole list look at https://gitea.com/gitea/gitea.com/issues/8
-            value: {{ Values.ui.forTheWholeListLookAtHttpsGiteaComGiteaGiteaComIssues_8 }}
+            value: "{{ .Values.ui.themes }}"
           - name: REACTIONS
-            value: {{ Values.ui.reactions }}
+            value: "{{ .Values.ui.reactions }}"
           - name: DEFAULT_SHOW_FULL_NAME
-            value: {{ Values.ui.defaultShowFullName }}
+            value: "{{ .Values.ui.defaultShowFullName }}"
           - name: SEARCH_REPO_DESCRIPTION
-            value: {{ Values.ui.searchRepoDescription }}
+            value: "{{ .Values.ui.searchRepoDescription }}"
           - name: USE_SERVICE_WORKER
-            value: {{ Values.ui.useServiceWorker }}
+            value: "{{ .Values.ui.useServiceWorker }}"
           - name: USER_PAGING_NUM
-            value: {{ Values.ui.admin.userPagingNum }}
+            value: "{{ .Values.ui.admin.userPagingNum }}"
           - name: REPO_PAGING_NUM
-            value: {{ Values.ui.admin.repoPagingNum }}
+            value: "{{ .Values.ui.admin.repoPagingNum }}"
           - name: NOTICE_PAGING_NUM
-            value: {{ Values.ui.admin.noticePagingNum }}
+            value: "{{ .Values.ui.admin.noticePagingNum }}"
           - name: ORG_PAGING_NUM
-            value: {{ Values.ui.admin.orgPagingNum }}
+            value: "{{ .Values.ui.admin.orgPagingNum }}"
           - name: REPO_PAGING_NUM
-            value: {{ Values.ui.user.repoPagingNum }}
+            value: "{{ .Values.ui.user.repoPagingNum }}"
           - name: AUTHOR
-            value: {{ Values.ui.meta.author }}
+            value: "{{ .Values.ui.meta.author }}"
           - name: DESCRIPTION
-            value: {{ Values.ui.meta.description }}
+            value: "{{ .Values.ui.meta.description }}"
           - name: KEYWORDS
-            value: {{ Values.ui.meta.keywords }}
+            value: "{{ .Values.ui.meta.keywords }}"
           - name: ENABLE_HARD_LINE_BREAK
-            value: {{ Values.markdown.enableHardLineBreak }}
+            value: "{{ .Values.markdown.enableHardLineBreak }}"
           - name: CUSTOM_URL_SCHEMES
-            value: {{ Values.markdown.customUrlSchemes }}
+            value: "{{ .Values.markdown.customUrlSchemes }}"
           - name: FILE_EXTENSIONS
-            value: {{ Values.markdown.fileExtensions }}
+            value: "{{ .Values.markdown.fileExtensions }}"
           - name: PROTOCOL
-            value: {{ Values.server.protocol }}
+            value: "{{ .Values.server.protocol }}"
           - name: DOMAIN
-            value: {{ Values.server.domain }}
+            value: "{{ .Values.server.domain }}"
           - name: ROOT_URL
-            value: {{ Values.server.rootUrl }}
+            value: "{{ .Values.server.rootUrl }}"
           - name: STATIC_URL_PREFIX
-            value: {{ Values.server.staticUrlPrefix }}
+            value: "{{ .Values.server.staticUrlPrefix }}"
           - name: HTTP_ADDR
-            value: {{ Values.server.httpAddr }}
+            value: "{{ .Values.server.httpAddr }}"
           - name: HTTP_PORT
-            value: {{ Values.server.httpPort }}
+            value: "{{ .Values.server.httpPort }}"
           - name: REDIRECT_OTHER_PORT
-            value: {{ Values.server.redirectOtherPort }}
+            value: "{{ .Values.server.redirectOtherPort }}"
           - name: PORT_TO_REDIRECT
-            value: {{ Values.server.portToRedirect }}
+            value: "{{ .Values.server.portToRedirect }}"
           - name: UNIX_SOCKET_PERMISSION
-            value: {{ Values.server.unixSocketPermission }}
+            value: "{{ .Values.server.unixSocketPermission }}"
           - name: LOCAL_ROOT_URL
-            value: {{ Values.server.localRootUrl }}
+            value: "{{ .Values.server.localRootUrl }}"
           - name: DISABLE_SSH
-            value: {{ Values.server.disableSsh }}
+            value: "{{ .Values.server.disableSsh }}"
           - name: START_SSH_SERVER
-            value: {{ Values.server.startSshServer }}
+            value: "{{ .Values.server.startSshServer }}"
           - name: BUILTIN_SSH_SERVER_USER
-            value: {{ Values.server.builtinSshServerUser }}
+            value: "{{ .Values.server.builtinSshServerUser }}"
           - name: SSH_DOMAIN
-            value: {{ Values.server.sshDomain }}
+            value: "{{ .Values.server.sshDomain }}"
           - name: SSH_LISTEN_HOST
-            value: {{ Values.server.sshListenHost }}
+            value: "{{ .Values.server.sshListenHost }}"
           - name: SSH_PORT
-            value: {{ Values.server.sshPort }}
+            value: "{{ .Values.server.sshPort }}"
           - name: SSH_LISTEN_PORT
-            value: {{ Values.server.sshListenPort }}
+            value: "{{ .Values.server.sshListenPort }}"
           - name: SSH_ROOT_PATH
-            value: {{ Values.server.sshRootPath }}
+            value: "{{ .Values.server.sshRootPath }}"
           - name: SSH_CREATE_AUTHORIZED_KEYS_FILE
-            value: {{ Values.server.sshCreateAuthorizedKeysFile }}
+            value: "{{ .Values.server.sshCreateAuthorizedKeysFile }}"
           - name: SSH_SERVER_CIPHERS
-            value: {{ Values.server.sshServerCiphers }}
+            value: "{{ .Values.server.sshServerCiphers }}"
           - name: SSH_SERVER_KEY_EXCHANGES
-            value: {{ Values.server.sshServerKeyExchanges }}
+            value: "{{ .Values.server.sshServerKeyExchanges }}"
           - name: SSH_SERVER_MACS
-            value: {{ Values.server.sshServerMacs }}
+            value: "{{ .Values.server.sshServerMacs }}"
           - name: SSH_KEY_TEST_PATH
-            value: {{ Values.server.sshKeyTestPath }}
+            value: "{{ .Values.server.sshKeyTestPath }}"
           - name: SSH_KEYGEN_PATH
-            value: {{ Values.server.sshKeygenPath }}
+            value: "{{ .Values.server.sshKeygenPath }}"
           - name: SSH_BACKUP_AUTHORIZED_KEYS
-            value: {{ Values.server.sshBackupAuthorizedKeys }}
+            value: "{{ .Values.server.sshBackupAuthorizedKeys }}"
           - name: SSH_EXPOSE_ANONYMOUS
-            value: {{ Values.server.sshExposeAnonymous }}
+            value: "{{ .Values.server.sshExposeAnonymous }}"
           - name: MINIMUM_KEY_SIZE_CHECK
-            value: {{ Values.server.minimumKeySizeCheck }}
+            value: "{{ .Values.server.minimumKeySizeCheck }}"
           - name: OFFLINE_MODE
-            value: {{ Values.server.offlineMode }}
+            value: "{{ .Values.server.offlineMode }}"
           - name: DISABLE_ROUTER_LOG
-            value: {{ Values.server.disableRouterLog }}
+            value: "{{ .Values.server.disableRouterLog }}"
           - name: CERT_FILE
-            value: {{ Values.server.certFile }}
+            value: "{{ .Values.server.certFile }}"
           - name: KEY_FILE
-            value: {{ Values.server.keyFile }}
+            value: "{{ .Values.server.keyFile }}"
           - name: STATIC_ROOT_PATH
-            value: {{ Values.server.staticRootPath }}
+            value: "{{ .Values.server.staticRootPath }}"
           - name: APP_DATA_PATH
-            value: {{ Values.server.appDataPath }}
+            value: "{{ .Values.server.appDataPath }}"
           - name: ENABLE_GZIP
-            value: {{ Values.server.enableGzip }}
+            value: "{{ .Values.server.enableGzip }}"
           - name: ENABLE_PPROF
-            value: {{ Values.server.enablePprof }}
+            value: "{{ .Values.server.enablePprof }}"
           - name: PPROF_DATA_PATH
-            value: {{ Values.server.pprofDataPath }}
+            value: "{{ .Values.server.pprofDataPath }}"
           - name: LANDING_PAGE
-            value: {{ Values.server.landingPage }}
+            value: "{{ .Values.server.landingPage }}"
           - name: LFS_START_SERVER
-            value: {{ Values.server.lfsStartServer }}
+            value: "{{ .Values.server.lfsStartServer }}"
           - name: LFS_CONTENT_PATH
-            value: {{ Values.server.lfsContentPath }}
+            value: "{{ .Values.server.lfsContentPath }}"
           - name: LFS_JWT_SECRET
-            value: {{ Values.server.lfsJwtSecret }}
+            value: "{{ .Values.server.lfsJwtSecret }}"
           - name: LFS_HTTP_AUTH_EXPIRY
-            value: {{ Values.server.lfsHttpAuthExpiry }}
+            value: "{{ .Values.server.lfsHttpAuthExpiry }}"
           - name: ALLOW_GRACEFUL_RESTARTS
-            value: {{ Values.server.allowGracefulRestarts }}
+            value: "{{ .Values.server.allowGracefulRestarts }}"
           - name: GRACEFUL_HAMMER_TIME
-            value: {{ Values.server.gracefulHammerTime }}
+            value: "{{ .Values.server.gracefulHammerTime }}"
           - name: STARTUP_TIMEOUT
-            value: {{ Values.server.startupTimeout }}
+            value: "{{ .Values.server.startupTimeout }}"
           - name: STATIC_CACHE_TIME
-            value: {{ Values.server.staticCacheTime }}
+            value: "{{ .Values.server.staticCacheTime }}"
           - name: DB_TYPE
-            value: {{ Values.database.dbType }}
+            value: "{{ .Values.database.dbType }}"
           - name: HOST
-            value: {{ Values.database.host }}
+            value: "{{ .Values.database.host }}"
           - name: NAME
-            value: {{ Values.database.name }}
+            value: "{{ .Values.database.name }}"
           - name: USER
-            value: {{ Values.database.user }}
+            value: "{{ .Values.database.user }}"
           - name: PASSWD
-            value: {{ Values.database.passwd }}
+            value: "{{ .Values.database.passwd }}"
           - name: SSL_MODE
-            value: {{ Values.database.sslMode }}
+            value: "{{ .Values.database.sslMode }}"
           - name: CHARSET
-            value: {{ Values.database.charset }}
+            value: "{{ .Values.database.charset }}"
           - name: PATH
-            value: {{ Values.database.path }}
+            value: "{{ .Values.database.path }}"
           - name: SQLITE_TIMEOUT
-            value: {{ Values.database.sqliteTimeout }}
+            value: "{{ .Values.database.sqliteTimeout }}"
           - name: ITERATE_BUFFER_SIZE
-            value: {{ Values.database.iterateBufferSize }}
+            value: "{{ .Values.database.iterateBufferSize }}"
           - name: LOG_SQL
-            value: {{ Values.database.logSql }}
+            value: "{{ .Values.database.logSql }}"
           - name: DB_RETRIES
-            value: {{ Values.database.dbRetries }}
+            value: "{{ .Values.database.dbRetries }}"
           - name: DB_RETRY_BACKOFF
-            value: {{ Values.database.dbRetryBackoff }}
+            value: "{{ .Values.database.dbRetryBackoff }}"
           - name: MAX_IDLE_CONNS
-            value: {{ Values.database.maxIdleConns }}
+            value: "{{ .Values.database.maxIdleConns }}"
           - name: CONN_MAX_LIFETIME
-            value: {{ Values.database.connMaxLifetime }}
+            value: "{{ .Values.database.connMaxLifetime }}"
           - name: MAX_OPEN_CONNS
-            value: {{ Values.database.maxOpenConns }}
+            value: "{{ .Values.database.maxOpenConns }}"
           - name: ISSUE_INDEXER_TYPE
-            value: {{ Values.indexer.issueIndexerType }}
+            value: "{{ .Values.indexer.issueIndexerType }}"
           - name: ISSUE_INDEXER_PATH
-            value: {{ Values.indexer.issueIndexerPath }}
+            value: "{{ .Values.indexer.issueIndexerPath }}"
           - name: ISSUE_INDEXER_QUEUE_TYPE
-            value: {{ Values.indexer.issueIndexerQueueType }}
+            value: "{{ .Values.indexer.issueIndexerQueueType }}"
           - name: ISSUE_INDEXER_QUEUE_DIR
-            value: {{ Values.indexer.issueIndexerQueueDir }}
+            value: "{{ .Values.indexer.issueIndexerQueueDir }}"
           - name: ISSUE_INDEXER_QUEUE_CONN_STR
-            value: {{ Values.indexer.issueIndexerQueueConnStr }}
+            value: "{{ .Values.indexer.issueIndexerQueueConnStr }}"
           - name: ISSUE_INDEXER_QUEUE_BATCH_NUMBER
-            value: {{ Values.indexer.issueIndexerQueueBatchNumber }}
+            value: "{{ .Values.indexer.issueIndexerQueueBatchNumber }}"
           - name: STARTUP_TIMEOUT
-            value: {{ Values.indexer.startupTimeout }}
+            value: "{{ .Values.indexer.startupTimeout }}"
           - name: REPO_INDEXER_ENABLED
-            value: {{ Values.indexer.repoIndexerEnabled }}
+            value: "{{ .Values.indexer.repoIndexerEnabled }}"
           - name: REPO_INDEXER_PATH
-            value: {{ Values.indexer.repoIndexerPath }}
+            value: "{{ .Values.indexer.repoIndexerPath }}"
           - name: UPDATE_BUFFER_LEN
-            value: {{ Values.indexer.updateBufferLen }}
+            value: "{{ .Values.indexer.updateBufferLen }}"
           - name: MAX_FILE_SIZE
-            value: {{ Values.indexer.maxFileSize }}
+            value: "{{ .Values.indexer.maxFileSize }}"
           - name: REPO_INDEXER_INCLUDE
-            value: {{ Values.indexer.repoIndexerInclude }}
+            value: "{{ .Values.indexer.repoIndexerInclude }}"
           - name: REPO_INDEXER_EXCLUDE
-            value: {{ Values.indexer.repoIndexerExclude }}
+            value: "{{ .Values.indexer.repoIndexerExclude }}"
           - name: DISABLE_REGULAR_ORG_CREATION
-            value: {{ Values.admin.disableRegularOrgCreation }}
+            value: "{{ .Values.admin.disableRegularOrgCreation }}"
           - name: DEFAULT_EMAIL_NOTIFICATIONS
-            value: {{ Values.admin.defaultEmailNotifications }}
+            value: "{{ .Values.admin.defaultEmailNotifications }}"
           - name: INSTALL_LOCK
-            value: {{ Values.security.installLock }}
+            value: "{{ .Values.security.installLock }}"
           - name: SECRET_KEY
-            value: {{ Values.security.secretKey }}
+            value: "{{ .Values.security.secretKey }}"
           - name: LOGIN_REMEMBER_DAYS
-            value: {{ Values.security.loginRememberDays }}
+            value: "{{ .Values.security.loginRememberDays }}"
           - name: COOKIE_USERNAME
-            value: {{ Values.security.cookieUsername }}
+            value: "{{ .Values.security.cookieUsername }}"
           - name: COOKIE_REMEMBER_NAME
-            value: {{ Values.security.cookieRememberName }}
+            value: "{{ .Values.security.cookieRememberName }}"
           - name: REVERSE_PROXY_AUTHENTICATION_USER
-            value: {{ Values.security.reverseProxyAuthenticationUser }}
+            value: "{{ .Values.security.reverseProxyAuthenticationUser }}"
           - name: REVERSE_PROXY_AUTHENTICATION_EMAIL
-            value: {{ Values.security.reverseProxyAuthenticationEmail }}
+            value: "{{ .Values.security.reverseProxyAuthenticationEmail }}"
           - name: MIN_PASSWORD_LENGTH
-            value: {{ Values.security.minPasswordLength }}
+            value: "{{ .Values.security.minPasswordLength }}"
           - name: IMPORT_LOCAL_PATHS
-            value: {{ Values.security.importLocalPaths }}
+            value: "{{ .Values.security.importLocalPaths }}"
           - name: DISABLE_GIT_HOOKS
-            value: {{ Values.security.disableGitHooks }}
+            value: "{{ .Values.security.disableGitHooks }}"
           - name: ONLY_ALLOW_PUSH_IF_GITEA_ENVIRONMENT_SET
-            value: {{ Values.security.onlyAllowPushIfGiteaEnvironmentSet }}
+            value: "{{ .Values.security.onlyAllowPushIfGiteaEnvironmentSet }}"
           - name: PASSWORD_COMPLEXITY
-            value: {{ Values.security.passwordComplexity }}
+            value: "{{ .Values.security.passwordComplexity }}"
           - name: PASSWORD_HASH_ALGO
-            value: {{ Values.security.passwordHashAlgo }}
+            value: "{{ .Values.security.passwordHashAlgo }}"
           - name: CSRF_COOKIE_HTTP_ONLY
-            value: {{ Values.security.csrfCookieHttpOnly }}
+            value: "{{ .Values.security.csrfCookieHttpOnly }}"
           - name: ENABLE_OPENID_SIGNIN
-            value: {{ Values.openid.enableOpenidSignin }}
+            value: "{{ .Values.openid.enableOpenidSignin }}"
           - name: WHITELISTED_URIS
-            value: {{ Values.openid.whitelistedUris }}
+            value: "{{ .Values.openid.whitelistedUris }}"
           - name: BLACKLISTED_URIS
-            value: {{ Values.openid.blacklistedUris }}
+            value: "{{ .Values.openid.blacklistedUris }}"
           - name: ACTIVE_CODE_LIVE_MINUTES
-            value: {{ Values.service.activeCodeLiveMinutes }}
+            value: "{{ .Values.service.activeCodeLiveMinutes }}"
           - name: RESET_PASSWD_CODE_LIVE_MINUTES
-            value: {{ Values.service.resetPasswdCodeLiveMinutes }}
+            value: "{{ .Values.service.resetPasswdCodeLiveMinutes }}"
           - name: REGISTER_EMAIL_CONFIRM
-            value: {{ Values.service.registerEmailConfirm }}
+            value: "{{ .Values.service.registerEmailConfirm }}"
           - name: EMAIL_DOMAIN_WHITELIST
-            value: {{ Values.service.emailDomainWhitelist }}
+            value: "{{ .Values.service.emailDomainWhitelist }}"
           - name: DISABLE_REGISTRATION
-            value: {{ Values.service.disableRegistration }}
+            value: "{{ .Values.service.disableRegistration }}"
           - name: ALLOW_ONLY_EXTERNAL_REGISTRATION
-            value: {{ Values.service.allowOnlyExternalRegistration }}
+            value: "{{ .Values.service.allowOnlyExternalRegistration }}"
           - name: REQUIRE_SIGNIN_VIEW
-            value: {{ Values.service.requireSigninView }}
+            value: "{{ .Values.service.requireSigninView }}"
           - name: ENABLE_NOTIFY_MAIL
-            value: {{ Values.service.enableNotifyMail }}
+            value: "{{ .Values.service.enableNotifyMail }}"
           - name: ENABLE_BASIC_AUTHENTICATION
-            value: {{ Values.service.enableBasicAuthentication }}
+            value: "{{ .Values.service.enableBasicAuthentication }}"
           - name: ENABLE_REVERSE_PROXY_AUTHENTICATION
-            value: {{ Values.service.enableReverseProxyAuthentication }}
+            value: "{{ .Values.service.enableReverseProxyAuthentication }}"
           - name: ENABLE_REVERSE_PROXY_AUTO_REGISTRATION
-            value: {{ Values.service.enableReverseProxyAutoRegistration }}
+            value: "{{ .Values.service.enableReverseProxyAutoRegistration }}"
           - name: ENABLE_REVERSE_PROXY_EMAIL
-            value: {{ Values.service.enableReverseProxyEmail }}
+            value: "{{ .Values.service.enableReverseProxyEmail }}"
           - name: ENABLE_CAPTCHA
-            value: {{ Values.service.enableCaptcha }}
+            value: "{{ .Values.service.enableCaptcha }}"
           - name: CAPTCHA_TYPE
-            value: {{ Values.service.captchaType }}
+            value: "{{ .Values.service.captchaType }}"
           - name: RECAPTCHA_SECRET
-            value: {{ Values.service.recaptchaSecret }}
+            value: "{{ .Values.service.recaptchaSecret }}"
           - name: RECAPTCHA_SITEKEY
-            value: {{ Values.service.recaptchaSitekey }}
+            value: "{{ .Values.service.recaptchaSitekey }}"
           - name: RECAPTCHA_URL
-            value: {{ Values.service.recaptchaUrl }}
+            value: "{{ .Values.service.recaptchaUrl }}"
           - name: DEFAULT_KEEP_EMAIL_PRIVATE
-            value: {{ Values.service.defaultKeepEmailPrivate }}
+            value: "{{ .Values.service.defaultKeepEmailPrivate }}"
           - name: DEFAULT_ALLOW_CREATE_ORGANIZATION
-            value: {{ Values.service.defaultAllowCreateOrganization }}
+            value: "{{ .Values.service.defaultAllowCreateOrganization }}"
           - name: DEFAULT_ORG_VISIBILITY
-            value: {{ Values.service.defaultOrgVisibility }}
+            value: "{{ .Values.service.defaultOrgVisibility }}"
           - name: DEFAULT_ORG_MEMBER_VISIBLE
-            value: {{ Values.service.defaultOrgMemberVisible }}
+            value: "{{ .Values.service.defaultOrgMemberVisible }}"
           - name: DEFAULT_ENABLE_DEPENDENCIES
-            value: {{ Values.service.defaultEnableDependencies }}
+            value: "{{ .Values.service.defaultEnableDependencies }}"
           - name: ALLOW_CROSS_REPOSITORY_DEPENDENCIES
-            value: {{ Values.service.allowCrossRepositoryDependencies }}
+            value: "{{ .Values.service.allowCrossRepositoryDependencies }}"
           - name: ENABLE_USER_HEATMAP
-            value: {{ Values.service.enableUserHeatmap }}
+            value: "{{ .Values.service.enableUserHeatmap }}"
           - name: ENABLE_TIMETRACKING
-            value: {{ Values.service.enableTimetracking }}
+            value: "{{ .Values.service.enableTimetracking }}"
           - name: DEFAULT_ENABLE_TIMETRACKING
-            value: {{ Values.service.defaultEnableTimetracking }}
+            value: "{{ .Values.service.defaultEnableTimetracking }}"
           - name: DEFAULT_ALLOW_ONLY_CONTRIBUTORS_TO_TRACK_TIME
-            value: {{ Values.service.defaultAllowOnlyContributorsToTrackTime }}
+            value: "{{ .Values.service.defaultAllowOnlyContributorsToTrackTime }}"
           - name: NO_REPLY_ADDRESS
-            value: {{ Values.service.noReplyAddress }}
+            value: "{{ .Values.service.noReplyAddress }}"
           - name: SHOW_REGISTRATION_BUTTON
-            value: {{ Values.service.showRegistrationButton }}
+            value: "{{ .Values.service.showRegistrationButton }}"
           - name: SHOW_MILESTONES_DASHBOARD_PAGE
-            value: {{ Values.service.showMilestonesDashboardPage }}
+            value: "{{ .Values.service.showMilestonesDashboardPage }}"
           - name: AUTO_WATCH_NEW_REPOS
-            value: {{ Values.service.autoWatchNewRepos }}
+            value: "{{ .Values.service.autoWatchNewRepos }}"
           - name: AUTO_WATCH_ON_CHANGES
-            value: {{ Values.service.autoWatchOnChanges }}
+            value: "{{ .Values.service.autoWatchOnChanges }}"
           - name: QUEUE_LENGTH
-            value: {{ Values.webhook.queueLength }}
+            value: "{{ .Values.webhook.queueLength }}"
           - name: DELIVER_TIMEOUT
-            value: {{ Values.webhook.deliverTimeout }}
+            value: "{{ .Values.webhook.deliverTimeout }}"
           - name: SKIP_TLS_VERIFY
-            value: {{ Values.webhook.skipTlsVerify }}
+            value: "{{ .Values.webhook.skipTlsVerify }}"
           - name: PAGING_NUM
-            value: {{ Values.webhook.pagingNum }}
+            value: "{{ .Values.webhook.pagingNum }}"
           - name: PROXY_URL
-            value: {{ Values.webhook.proxyUrl }}
+            value: "{{ .Values.webhook.proxyUrl }}"
           - name: PROXY_HOSTS
-            value: {{ Values.webhook.proxyHosts }}
+            value: "{{ .Values.webhook.proxyHosts }}"
           - name: ENABLED
-            value: {{ Values.mailer.enabled }}
+            value: "{{ .Values.mailer.enabled }}"
           - name: SEND_BUFFER_LEN
-            value: {{ Values.mailer.sendBufferLen }}
+            value: "{{ .Values.mailer.sendBufferLen }}"
           - name: SUBJECT_PREFIX
-            value: {{ Values.mailer.subjectPrefix }}
+            value: "{{ .Values.mailer.subjectPrefix }}"
           - name: HOST
-            value: {{ Values.mailer.host }}
+            value: "{{ .Values.mailer.host }}"
           - name: DISABLE_HELO
-            value: {{ Values.mailer.disableHelo }}
+            value: "{{ .Values.mailer.disableHelo }}"
           - name: HELO_HOSTNAME
-            value: {{ Values.mailer.heloHostname }}
+            value: "{{ .Values.mailer.heloHostname }}"
           - name: SKIP_VERIFY
-            value: {{ Values.mailer.skipVerify }}
+            value: "{{ .Values.mailer.skipVerify }}"
           - name: USE_CERTIFICATE
-            value: {{ Values.mailer.useCertificate }}
+            value: "{{ .Values.mailer.useCertificate }}"
           - name: CERT_FILE
-            value: {{ Values.mailer.certFile }}
+            value: "{{ .Values.mailer.certFile }}"
           - name: KEY_FILE
-            value: {{ Values.mailer.keyFile }}
+            value: "{{ .Values.mailer.keyFile }}"
           - name: IS_TLS_ENABLED
-            value: {{ Values.mailer.isTlsEnabled }}
+            value: "{{ .Values.mailer.isTlsEnabled }}"
           - name: FROM
-            value: {{ Values.mailer.from }}
+            value: "{{ .Values.mailer.from }}"
           - name: USER
-            value: {{ Values.mailer.user }}
+            value: "{{ .Values.mailer.user }}"
           - name: PASSWD
-            value: {{ Values.mailer.passwd }}
+            value: "{{ .Values.mailer.passwd }}"
           - name: SEND_AS_PLAIN_TEXT
-            value: {{ Values.mailer.sendAsPlainText }}
+            value: "{{ .Values.mailer.sendAsPlainText }}"
           - name: MAILER_TYPE
-            value: {{ Values.mailer.mailerType }}
+            value: "{{ .Values.mailer.mailerType }}"
           - name: SENDMAIL_PATH
-            value: {{ Values.mailer.sendmailPath }}
+            value: "{{ .Values.mailer.sendmailPath }}"
           - name: SENDMAIL_ARGS
-            value: {{ Values.mailer.sendmailArgs }}
+            value: "{{ .Values.mailer.sendmailArgs }}"
           - name: ADAPTER
-            value: {{ Values.cache.adapter }}
+            value: "{{ .Values.cache.adapter }}"
           - name: INTERVAL
-            value: {{ Values.cache.interval }}
+            value: "{{ .Values.cache.interval }}"
           - name: HOST
-            value: {{ Values.cache.host }}
+            value: "{{ .Values.cache.host }}"
           - name: ITEM_TTL
-            value: {{ Values.cache.itemTtl }}
+            value: "{{ .Values.cache.itemTtl }}"
           - name: PROVIDER
-            value: {{ Values.session.provider }}
+            value: "{{ .Values.session.provider }}"
           - name: PROVIDER_CONFIG
-            value: {{ Values.session.providerConfig }}
+            value: "{{ .Values.session.providerConfig }}"
           - name: COOKIE_NAME
-            value: {{ Values.session.cookieName }}
+            value: "{{ .Values.session.cookieName }}"
           - name: COOKIE_SECURE
-            value: {{ Values.session.cookieSecure }}
+            value: "{{ .Values.session.cookieSecure }}"
           - name: ENABLE_SET_COOKIE
-            value: {{ Values.session.enableSetCookie }}
+            value: "{{ .Values.session.enableSetCookie }}"
           - name: GC_INTERVAL_TIME
-            value: {{ Values.session.gcIntervalTime }}
+            value: "{{ .Values.session.gcIntervalTime }}"
           - name: SESSION_LIFE_TIME
-            value: {{ Values.session.sessionLifeTime }}
+            value: "{{ .Values.session.sessionLifeTime }}"
           - name: AVATAR_UPLOAD_PATH
-            value: {{ Values.picture.avatarUploadPath }}
+            value: "{{ .Values.picture.avatarUploadPath }}"
           - name: REPOSITORY_AVATAR_UPLOAD_PATH
-            value: {{ Values.picture.repositoryAvatarUploadPath }}
+            value: "{{ .Values.picture.repositoryAvatarUploadPath }}"
           - name: REPOSITORY_AVATAR_FALLBACK
-            value: {{ Values.picture.repositoryAvatarFallback }}
+            value: "{{ .Values.picture.repositoryAvatarFallback }}"
           - name: REPOSITORY_AVATAR_FALLBACK_IMAGE
-            value: {{ Values.picture.repositoryAvatarFallbackImage }}
+            value: "{{ .Values.picture.repositoryAvatarFallbackImage }}"
           - name: AVATAR_MAX_WIDTH
-            value: {{ Values.picture.avatarMaxWidth }}
+            value: "{{ .Values.picture.avatarMaxWidth }}"
           - name: AVATAR_MAX_HEIGHT
-            value: {{ Values.picture.avatarMaxHeight }}
+            value: "{{ .Values.picture.avatarMaxHeight }}"
           - name: AVATAR_MAX_FILE_SIZE
-            value: {{ Values.picture.avatarMaxFileSize }}
+            value: "{{ .Values.picture.avatarMaxFileSize }}"
           - name: GRAVATAR_SOURCE
-            value: {{ Values.picture.gravatarSource }}
+            value: "{{ .Values.picture.gravatarSource }}"
           - name: DISABLE_GRAVATAR
-            value: {{ Values.picture.disableGravatar }}
+            value: "{{ .Values.picture.disableGravatar }}"
           - name: ENABLE_FEDERATED_AVATAR
-            value: {{ Values.picture.enableFederatedAvatar }}
+            value: "{{ .Values.picture.enableFederatedAvatar }}"
           - name: ENABLED
-            value: {{ Values.attachment.enabled }}
+            value: "{{ .Values.attachment.enabled }}"
           - name: PATH
-            value: {{ Values.attachment.path }}
+            value: "{{ .Values.attachment.path }}"
           - name: ALLOWED_TYPES
-            value: {{ Values.attachment.allowedTypes }}
+            value: "{{ .Values.attachment.allowedTypes }}"
           - name: MAX_SIZE
-            value: {{ Values.attachment.maxSize }}
+            value: "{{ .Values.attachment.maxSize }}"
           - name: MAX_FILES
-            value: {{ Values.attachment.maxFiles }}
+            value: "{{ .Values.attachment.maxFiles }}"
           - name: FORMAT
-            value: {{ Values.time.format }}
+            value: "{{ .Values.time.format }}"
           - name: DEFAULT_UI_LOCATION
-            value: {{ Values.time.defaultUiLocation }}
+            value: "{{ .Values.time.defaultUiLocation }}"
           - name: ROOT_PATH
-            value: {{ Values.log.rootPath }}
+            value: "{{ .Values.log.rootPath }}"
           - name: MODE
-            value: {{ Values.log.mode }}
+            value: "{{ .Values.log.mode }}"
           - name: BUFFER_LEN
-            value: {{ Values.log.bufferLen }}
+            value: "{{ .Values.log.bufferLen }}"
           - name: REDIRECT_MACARON_LOG
-            value: {{ Values.log.redirectMacaronLog }}
+            value: "{{ .Values.log.redirectMacaronLog }}"
           - name: MACARON
-            value: {{ Values.log.macaron }}
+            value: "{{ .Values.log.macaron }}"
           - name: ROUTER_LOG_LEVEL
-            value: {{ Values.log.routerLogLevel }}
+            value: "{{ .Values.log.routerLogLevel }}"
           - name: ROUTER
-            value: {{ Values.log.router }}
+            value: "{{ .Values.log.router }}"
           - name: ENABLE_ACCESS_LOG
-            value: {{ Values.log.enableAccessLog }}
-          - name: ACCESS_LOG_TEMPLATE
-            value: {{ Values.log.accessLogTemplate }}
+            value: "{{ .Values.log.enableAccessLog }}"
+          # TODO: helm is throwing errors on this
+          #- name: ACCESS_LOG_TEMPLATE
+          #  value: "{{ .Values.log.accessLogTemplate }}"
           - name: ACCESS
-            value: {{ Values.log.access }}
+            value: "{{ .Values.log.access }}"
           - name: LEVEL
-            value: {{ Values.log.level }}
+            value: "{{ .Values.log.level }}"
           - name: STACKTRACE_LEVEL
-            value: {{ Values.log.stacktraceLevel }}
+            value: "{{ .Values.log.stacktraceLevel }}"
           - name: FLAGS
-            value: {{ Values.log.x.flags }}
+            value: "{{ .Values.log.x.flags }}"
           - name: EXPRESSION
-            value: {{ Values.log.x.expression }}
+            value: "{{ .Values.log.x.expression }}"
           - name: PREFIX
-            value: {{ Values.log.x.prefix }}
+            value: "{{ .Values.log.x.prefix }}"
           - name: COLORIZE
-            value: {{ Values.log.x.colorize }}
+            value: "{{ .Values.log.x.colorize }}"
           - name: LEVEL
-            value: {{ Values.log.console.level }}
+            value: "{{ .Values.log.console.level }}"
           - name: STDERR
-            value: {{ Values.log.console.stderr }}
+            value: "{{ .Values.log.console.stderr }}"
           - name: LEVEL
-            value: {{ Values.log.file.level }}
+            value: "{{ .Values.log.file.level }}"
           - name: FILE_NAME
-            value: {{ Values.log.file.fileName }}
+            value: "{{ .Values.log.file.fileName }}"
           - name: LOG_ROTATE
-            value: {{ Values.log.file.logRotate }}
+            value: "{{ .Values.log.file.logRotate }}"
           - name: MAX_LINES
-            value: {{ Values.log.file.maxLines }}
+            value: "{{ .Values.log.file.maxLines }}"
           - name: MAX_SIZE_SHIFT
-            value: {{ Values.log.file.maxSizeShift }}
+            value: "{{ .Values.log.file.maxSizeShift }}"
           - name: DAILY_ROTATE
-            value: {{ Values.log.file.dailyRotate }}
+            value: "{{ .Values.log.file.dailyRotate }}"
           - name: MAX_DAYS
-            value: {{ Values.log.file.maxDays }}
+            value: "{{ .Values.log.file.maxDays }}"
           - name: COMPRESS
-            value: {{ Values.log.file.compress }}
+            value: "{{ .Values.log.file.compress }}"
           - name: COMPRESSION_LEVEL
-            value: {{ Values.log.file.compressionLevel }}
+            value: "{{ .Values.log.file.compressionLevel }}"
           - name: LEVEL
-            value: {{ Values.log.conn.level }}
+            value: "{{ .Values.log.conn.level }}"
           - name: RECONNECT_ON_MSG
-            value: {{ Values.log.conn.reconnectOnMsg }}
+            value: "{{ .Values.log.conn.reconnectOnMsg }}"
           - name: RECONNECT
-            value: {{ Values.log.conn.reconnect }}
+            value: "{{ .Values.log.conn.reconnect }}"
           - name: PROTOCOL
-            value: {{ Values.log.conn.protocol }}
+            value: "{{ .Values.log.conn.protocol }}"
           - name: ADDR
-            value: {{ Values.log.conn.addr }}
+            value: "{{ .Values.log.conn.addr }}"
           - name: LEVEL
-            value: {{ Values.log.smtp.level }}
+            value: "{{ .Values.log.smtp.level }}"
           - name: SUBJECT
-            value: {{ Values.log.smtp.subject }}
+            value: "{{ .Values.log.smtp.subject }}"
           - name: HOST
-            value: {{ Values.log.smtp.host }}
+            value: "{{ .Values.log.smtp.host }}"
           - name: USER
-            value: {{ Values.log.smtp.user }}
+            value: "{{ .Values.log.smtp.user }}"
           - name: PASSWD
-            value: {{ Values.log.smtp.passwd }}
+            value: "{{ .Values.log.smtp.passwd }}"
           - name: RECEIVERS
-            value: {{ Values.log.smtp.receivers }}
+            value: "{{ .Values.log.smtp.receivers }}"
           - name: ENABLED
-            value: {{ Values.cron.enabled }}
+            value: "{{ .Values.cron.enabled }}"
           - name: RUN_AT_START
-            value: {{ Values.cron.runAtStart }}
+            value: "{{ .Values.cron.runAtStart }}"
           - name: SCHEDULE
-            value: {{ Values.cron.updateMirrors.schedule }}
+            value: "{{ .Values.cron.updateMirrors.schedule }}"
           - name: SCHEDULE
-            value: {{ Values.cron.repoHealthCheck.schedule }}
+            value: "{{ .Values.cron.repoHealthCheck.schedule }}"
           - name: TIMEOUT
-            value: {{ Values.cron.repoHealthCheck.timeout }}
+            value: "{{ .Values.cron.repoHealthCheck.timeout }}"
           - name: ARGS
-            value: {{ Values.cron.repoHealthCheck.args }}
+            value: "{{ .Values.cron.repoHealthCheck.args }}"
           - name: RUN_AT_START
-            value: {{ Values.cron.checkRepoStats.runAtStart }}
+            value: "{{ .Values.cron.checkRepoStats.runAtStart }}"
           - name: SCHEDULE
-            value: {{ Values.cron.checkRepoStats.schedule }}
+            value: "{{ .Values.cron.checkRepoStats.schedule }}"
           - name: ENABLED
-            value: {{ Values.cron.archiveCleanup.enabled }}
+            value: "{{ .Values.cron.archiveCleanup.enabled }}"
           - name: RUN_AT_START
-            value: {{ Values.cron.archiveCleanup.runAtStart }}
+            value: "{{ .Values.cron.archiveCleanup.runAtStart }}"
           - name: SCHEDULE
-            value: {{ Values.cron.archiveCleanup.schedule }}
+            value: "{{ .Values.cron.archiveCleanup.schedule }}"
           - name: OLDER_THAN
-            value: {{ Values.cron.archiveCleanup.olderThan }}
+            value: "{{ .Values.cron.archiveCleanup.olderThan }}"
           - name: RUN_AT_START
-            value: {{ Values.cron.syncExternalUsers.runAtStart }}
+            value: "{{ .Values.cron.syncExternalUsers.runAtStart }}"
           - name: SCHEDULE
-            value: {{ Values.cron.syncExternalUsers.schedule }}
+            value: "{{ .Values.cron.syncExternalUsers.schedule }}"
           - name: UPDATE_EXISTING
-            value: {{ Values.cron.syncExternalUsers.updateExisting }}
+            value: "{{ .Values.cron.syncExternalUsers.updateExisting }}"
           - name: SCHEDULE
-            value: {{ Values.cron.updateMigrationPostId.schedule }}
+            value: "{{ .Values.cron.updateMigrationPostId.schedule }}"
           - name: PATH
-            value: {{ Values.git.path }}
+            value: "{{ .Values.git.path }}"
           - name: DISABLE_DIFF_HIGHLIGHT
-            value: {{ Values.git.disableDiffHighlight }}
+            value: "{{ .Values.git.disableDiffHighlight }}"
           - name: MAX_GIT_DIFF_LINES
-            value: {{ Values.git.maxGitDiffLines }}
+            value: "{{ .Values.git.maxGitDiffLines }}"
           - name: MAX_GIT_DIFF_LINE_CHARACTERS
-            value: {{ Values.git.maxGitDiffLineCharacters }}
+            value: "{{ .Values.git.maxGitDiffLineCharacters }}"
           - name: MAX_GIT_DIFF_FILES
-            value: {{ Values.git.maxGitDiffFiles }}
+            value: "{{ .Values.git.maxGitDiffFiles }}"
           - name: GC_ARGS
-            value: {{ Values.git.gcArgs }}
+            value: "{{ .Values.git.gcArgs }}"
           - name: EnableAutoGitWireProtocol
-            value: {{ Values.git.enableAutoGitWireProtocol }}
+            value: "{{ .Values.git.enableAutoGitWireProtocol }}"
           - name: DEFAULT
-            value: {{ Values.git.timeout.default }}
+            value: "{{ .Values.git.timeout.default }}"
           - name: MIGRATE
-            value: {{ Values.git.timeout.migrate }}
+            value: "{{ .Values.git.timeout.migrate }}"
           - name: MIRROR
-            value: {{ Values.git.timeout.mirror }}
+            value: "{{ .Values.git.timeout.mirror }}"
           - name: CLONE
-            value: {{ Values.git.timeout.clone }}
+            value: "{{ .Values.git.timeout.clone }}"
           - name: PULL
-            value: {{ Values.git.timeout.pull }}
+            value: "{{ .Values.git.timeout.pull }}"
           - name: GC
-            value: {{ Values.git.timeout.gc }}
+            value: "{{ .Values.git.timeout.gc }}"
           - name: DEFAULT_INTERVAL
-            value: {{ Values.mirror.defaultInterval }}
+            value: "{{ .Values.mirror.defaultInterval }}"
           - name: MIN_INTERVAL
-            value: {{ Values.mirror.minInterval }}
+            value: "{{ .Values.mirror.minInterval }}"
           - name: ENABLE_SWAGGER
-            value: {{ Values.api.enableSwagger }}
+            value: "{{ .Values.api.enableSwagger }}"
           - name: MAX_RESPONSE_ITEMS
-            value: {{ Values.api.maxResponseItems }}
+            value: "{{ .Values.api.maxResponseItems }}"
           - name: DEFAULT_PAGING_NUM
-            value: {{ Values.api.defaultPagingNum }}
+            value: "{{ .Values.api.defaultPagingNum }}"
           - name: DEFAULT_GIT_TREES_PER_PAGE
-            value: {{ Values.api.defaultGitTreesPerPage }}
+            value: "{{ .Values.api.defaultGitTreesPerPage }}"
           - name: DEFAULT_MAX_BLOB_SIZE
-            value: {{ Values.api.defaultMaxBlobSize }}
+            value: "{{ .Values.api.defaultMaxBlobSize }}"
           - name: ENABLE
-            value: {{ Values.oauth2.enable }}
+            value: "{{ .Values.oauth2.enable }}"
           - name: ACCESS_TOKEN_EXPIRATION_TIME
-            value: {{ Values.oauth2.accessTokenExpirationTime }}
+            value: "{{ .Values.oauth2.accessTokenExpirationTime }}"
           - name: REFRESH_TOKEN_EXPIRATION_TIME
-            value: {{ Values.oauth2.refreshTokenExpirationTime }}
+            value: "{{ .Values.oauth2.refreshTokenExpirationTime }}"
           - name: INVALIDATE_REFRESH_TOKENS
-            value: {{ Values.oauth2.invalidateRefreshTokens }}
+            value: "{{ .Values.oauth2.invalidateRefreshTokens }}"
           - name: JWT_SECRET
-            value: {{ Values.oauth2.jwtSecret }}
+            value: "{{ .Values.oauth2.jwtSecret }}"
           - name: LANGS
-            value: {{ Values.i18n.langs }}
+            value: "{{ .Values.i18n.langs }}"
           - name: NAMES
-            value: {{ Values.i18n.names }}
+            value: "{{ .Values.i18n.names }}"
           - name: en-US
-            value: {{ Values.i18n.datelang.enUs }}
+            value: "{{ .Values.i18n.datelang.enUs }}"
           - name: zh-CN
-            value: {{ Values.i18n.datelang.zhCn }}
+            value: "{{ .Values.i18n.datelang.zhCn }}"
           - name: zh-HK
-            value: {{ Values.i18n.datelang.zhHk }}
+            value: "{{ .Values.i18n.datelang.zhHk }}"
           - name: zh-TW
-            value: {{ Values.i18n.datelang.zhTw }}
+            value: "{{ .Values.i18n.datelang.zhTw }}"
           - name: de-DE
-            value: {{ Values.i18n.datelang.deDe }}
+            value: "{{ .Values.i18n.datelang.deDe }}"
           - name: fr-FR
-            value: {{ Values.i18n.datelang.frFr }}
+            value: "{{ .Values.i18n.datelang.frFr }}"
           - name: nl-NL
-            value: {{ Values.i18n.datelang.nlNl }}
+            value: "{{ .Values.i18n.datelang.nlNl }}"
           - name: lv-LV
-            value: {{ Values.i18n.datelang.lvLv }}
+            value: "{{ .Values.i18n.datelang.lvLv }}"
           - name: ru-RU
-            value: {{ Values.i18n.datelang.ruRu }}
+            value: "{{ .Values.i18n.datelang.ruRu }}"
           - name: uk-UA
-            value: {{ Values.i18n.datelang.ukUa }}
+            value: "{{ .Values.i18n.datelang.ukUa }}"
           - name: ja-JP
-            value: {{ Values.i18n.datelang.jaJp }}
+            value: "{{ .Values.i18n.datelang.jaJp }}"
           - name: es-ES
-            value: {{ Values.i18n.datelang.esEs }}
+            value: "{{ .Values.i18n.datelang.esEs }}"
           - name: pt-BR
-            value: {{ Values.i18n.datelang.ptBr }}
+            value: "{{ .Values.i18n.datelang.ptBr }}"
           - name: pl-PL
-            value: {{ Values.i18n.datelang.plPl }}
+            value: "{{ .Values.i18n.datelang.plPl }}"
           - name: bg-BG
-            value: {{ Values.i18n.datelang.bgBg }}
+            value: "{{ .Values.i18n.datelang.bgBg }}"
           - name: it-IT
-            value: {{ Values.i18n.datelang.itIt }}
+            value: "{{ .Values.i18n.datelang.itIt }}"
           - name: fi-FI
-            value: {{ Values.i18n.datelang.fiFi }}
+            value: "{{ .Values.i18n.datelang.fiFi }}"
           - name: tr-TR
-            value: {{ Values.i18n.datelang.trTr }}
+            value: "{{ .Values.i18n.datelang.trTr }}"
           - name: cs-CZ
-            value: {{ Values.i18n.datelang.csCz }}
+            value: "{{ .Values.i18n.datelang.csCz }}"
           - name: sr-SP
-            value: {{ Values.i18n.datelang.srSp }}
+            value: "{{ .Values.i18n.datelang.srSp }}"
           - name: sv-SE
-            value: {{ Values.i18n.datelang.svSe }}
+            value: "{{ .Values.i18n.datelang.svSe }}"
           - name: ko-KR
-            value: {{ Values.i18n.datelang.koKr }}
+            value: "{{ .Values.i18n.datelang.koKr }}"
           - name: SHOW_FOOTER_BRANDING
-            value: {{ Values.other.showFooterBranding }}
+            value: "{{ .Values.other.showFooterBranding }}"
           - name: SHOW_FOOTER_VERSION
-            value: {{ Values.other.showFooterVersion }}
+            value: "{{ .Values.other.showFooterVersion }}"
           - name: SHOW_FOOTER_TEMPLATE_LOAD_TIME
-            value: {{ Values.other.showFooterTemplateLoadTime }}
+            value: "{{ .Values.other.showFooterTemplateLoadTime }}"
           - name: ENABLED
-            value: {{ Values.metrics.enabled }}
+            value: "{{ .Values.metrics.enabled }}"
           - name: TOKEN
-            value: {{ Values.metrics.token }}
+            value: "{{ .Values.metrics.token }}"
           - name: QUEUE_TYPE
-            value: {{ Values.task.queueType }}
+            value: "{{ .Values.task.queueType }}"
           - name: QUEUE_LENGTH
-            value: {{ Values.task.queueLength }}
+            value: "{{ .Values.task.queueLength }}"
           - name: QUEUE_CONN_STR
-            value: {{ Values.task.queueConnStr }}
+            value: "{{ .Values.task.queueConnStr }}"
           - name: MAX_ATTEMPTS
-            value: {{ Values.migrations.maxAttempts }}
+            value: "{{ .Values.migrations.maxAttempts }}"
           - name: RETRY_BACKOFF
-            value: {{ Values.migrations.retryBackoff }}
+            value: "{{ .Values.migrations.retryBackoff }}"
           - name: ED25519
-            value: {{ Values.ssh.minimumKeySizes.ed25519 }}
+            value: "{{ .Values.ssh.minimumKeySizes.ed25519 }}"
           - name: ECDSA
-            value: {{ Values.ssh.minimumKeySizes.ecdsa }}
+            value: "{{ .Values.ssh.minimumKeySizes.ecdsa }}"
           - name: RSA
-            value: {{ Values.ssh.minimumKeySizes.rsa }}
+            value: "{{ .Values.ssh.minimumKeySizes.rsa }}"
           - name: DSA
-            value: {{ Values.ssh.minimumKeySizes.dsa }}
+            value: "{{ .Values.ssh.minimumKeySizes.dsa }}"
           - name: ENABLED
-            value: {{ Values.markup.asciidoc.enabled }}
+            value: "{{ .Values.markup.asciidoc.enabled }}"
           - name: FILE_EXTENSIONS
-            value: {{ Values.markup.asciidoc.fileExtensions }}
+            value: "{{ .Values.markup.asciidoc.fileExtensions }}"
           - name: RENDER_COMMAND
-            value: {{ Values.markup.asciidoc.renderCommand }}
+            value: "{{ .Values.markup.asciidoc.renderCommand }}"
           - name: IS_INPUT_FILE
-            value: {{ Values.markup.asciidoc.isInputFile }}
+            value: "{{ .Values.markup.asciidoc.isInputFile }}"
           image: "{{ .Values.image.repository }}:{{ .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:

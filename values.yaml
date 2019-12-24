@@ -1,303 +1,303 @@
 # https://docs.gitea.io/en-us/config-cheat-sheet/
 appName: "Gitea: Git with a cup of tea"
-runUser: git
-runMode: dev
-repository: 
-  root: 
-  scriptType: bash
-  ansiCharset: 
-  forcePrivate: 
-  defaultPrivate: last
+runUser: "git"
+runMode: "dev"
+repository:
+  root:
+  scriptType: "bash"
+  ansiCharset:
+  forcePrivate: false
+  defaultPrivate: "last"
   maxCreationLimit: -1
   mirrorQueueLength: 1000
   pullRequestQueueLength: 1000
-  preferredLicenses: Apache License 2.0,MIT License
-  disableHttpGit: 
-  accessControlAllowOrigin: 
-  useCompatSshUri: 
-  defaultCloseIssuesViaCommitsInAnyBranch: 
-  enablePushCreateUser: 
-  enablePushCreateOrg: 
-  editor: 
-    lineWrapExtensions: .txt,.md,.markdown,.mdown,.mkd,
-    previewableFileModes: markdown
-  local: 
-    localCopyPath: tmp/local-repo
-    localWikiPath: tmp/local-wiki
-  upload: 
+  preferredLicenses: "Apache License 2.0,MIT License"
+  disableHttpGit: false
+  accessControlAllowOrigin:
+  useCompatSshUri: false
+  defaultCloseIssuesViaCommitsInAnyBranch: false
+  enablePushCreateUser: false
+  enablePushCreateOrg: false
+  editor:
+    lineWrapExtensions: ".txt,.md,.markdown,.mdown,.mkd,"
+    previewableFileModes: "markdown"
+  local:
+    localCopyPath: "tmp/local-repo"
+    localWikiPath: "tmp/local-wiki"
+  upload:
     enabled: true
-    tempPath: data/tmp/uploads
-    allowedTypes: 
+    tempPath: "data/tmp/uploads"
+    allowedTypes:
     fileMaxSize: 3
     maxFiles: 5
-  pull-request: 
-    workInProgressPrefixes: WIP:,[WIP]
-    closeKeywords: close,closes,closed,fix,fixes,fixed,resolve,resolves,resolved
-    reopenKeywords: reopen,reopens,reopened
-  issue: 
-    lockReasons: Too heated,Off-topic,Resolved,Spam
-  signing: 
-    signingKey: default
-    signingName: 
-    signingEmail: 
-    initialCommit: always
-    crudActions: pubkey, twofa, parentsigned
-    wiki: never
-    merges: pubkey, twofa, basesigned, commitssigned
-cors: 
-  enabled: 
-  scheme: http
-  allowDomain: *
-  allowSubdomain: 
-  methods: GET,HEAD,POST,PUT,PATCH,DELETE,OPTIONS
-  maxAge: 10m
-  allowCredentials: 
-ui: 
+  pullRequest:
+    workInProgressPrefixes: "WIP:,[WIP]"
+    closeKeywords: "close,closes,closed,fix,fixes,fixed,resolve,resolves,resolved"
+    reopenKeywords: "reopen,reopens,reopened"
+  issue:
+    lockReasons: "Too heated,Off-topic,Resolved,Spam"
+  signing:
+    signingKey: "default"
+    signingName:
+    signingEmail:
+    initialCommit: "always"
+    crudActions: "pubkey, twofa, parentsigned"
+    wiki: "never"
+    merges: "pubkey, twofa, basesigned, commitssigned"
+cors:
+  enabled: false
+  scheme: "http"
+  allowDomain: "*"
+  allowSubdomain: false
+  methods: "GET,HEAD,POST,PUT,PATCH,DELETE,OPTIONS"
+  maxAge: "10m"
+  allowCredentials: false
+ui:
   explorePagingNum: 20
   issuePagingNum: 10
   feedMaxCommitNum: 5
   graphMaxCommitNum: 100
   codeCommentLines: 4
-  themeColorMetaTag: `
+  themeColorMetaTag: "`"
   maxDisplayFileSize: 8388608
   showUserEmail: true
-  defaultTheme: gitea
-  themes: gitea,arc-green
+  defaultTheme: "gitea"
+  themes: "gitea,arc-green"
   forTheWholeListLookAtHttpsGiteaComGiteaGiteaComIssues_8: true
-  reactions: +1, -1, laugh, hooray, confused, heart, rocket, eyes
-  defaultShowFullName: 
+  reactions: "+1, -1, laugh, hooray, confused, heart, rocket, eyes"
+  defaultShowFullName: false
   searchRepoDescription: true
   useServiceWorker: true
-  admin: 
+  admin:
     userPagingNum: 50
     repoPagingNum: 50
     noticePagingNum: 25
     orgPagingNum: 50
-  user: 
+  user:
     repoPagingNum: 15
-  meta: 
-    author: Gitea - Git with a cup of tea
-    description: Gitea (Git with a cup of tea) is a painless self-hosted Git service written in Go
-    keywords: go,git,self-hosted,gitea
-markdown: 
-  enableHardLineBreak: 
-  customUrlSchemes: 
-  fileExtensions: .md,.markdown,.mdown,.mkd
-server: 
-  protocol: http
-  domain: localhost
-  rootUrl: %(PROTOCOL)s://%(DOMAIN)s:%(HTTP_PORT)s/
-  staticUrlPrefix: 
-  httpAddr: 0.0.0.0
+  meta:
+    author: "Gitea - Git with a cup of tea"
+    description: "Gitea (Git with a cup of tea) is a painless self-hosted Git service written in Go"
+    keywords: "go,git,self-hosted,gitea"
+markdown:
+  enableHardLineBreak: false
+  customUrlSchemes:
+  fileExtensions: ".md,.markdown,.mdown,.mkd"
+server:
+  protocol: "http"
+  domain: "localhost"
+  rootUrl: "%(PROTOCOL)s://%(DOMAIN)s:%(HTTP_PORT)s/"
+  staticUrlPrefix:
+  httpAddr: "0.0.0.0"
   httpPort: 3000
-  redirectOtherPort: 
+  redirectOtherPort: false
   portToRedirect: 80
   unixSocketPermission: 666
-  localRootUrl: %(PROTOCOL)s://%(HTTP_ADDR)s:%(HTTP_PORT)s/
-  disableSsh: 
-  startSshServer: 
-  builtinSshServerUser: 
-  sshDomain: %(DOMAIN)s
-  sshListenHost: 
+  localRootUrl: "%(PROTOCOL)s://%(HTTP_ADDR)s:%(HTTP_PORT)s/"
+  disableSsh: false
+  startSshServer: false
+  builtinSshServerUser:
+  sshDomain: "%(DOMAIN)s"
+  sshListenHost:
   sshPort: 22
-  sshListenPort: %(SSH_PORT)s
-  sshRootPath: 
+  sshListenPort: "%(SSH_PORT)s"
+  sshRootPath:
   sshCreateAuthorizedKeysFile: true
-  sshServerCiphers: aes128-ctr, aes192-ctr, aes256-ctr, aes128-gcm@openssh.com, arcfour256, arcfour128
-  sshServerKeyExchanges: diffie-hellman-group1-sha1, diffie-hellman-group14-sha1, ecdh-sha2-nistp256, ecdh-sha2-nistp384, ecdh-sha2-nistp521, curve25519-sha256@libssh.org
-  sshServerMacs: hmac-sha2-256-etm@openssh.com, hmac-sha2-256, hmac-sha1, hmac-sha1-96
-  sshKeyTestPath: 
-  sshKeygenPath: ssh-keygen
+  sshServerCiphers: "aes128-ctr, aes192-ctr, aes256-ctr, aes128-gcm@openssh.com, arcfour256, arcfour128"
+  sshServerKeyExchanges: "diffie-hellman-group1-sha1, diffie-hellman-group14-sha1, ecdh-sha2-nistp256, ecdh-sha2-nistp384, ecdh-sha2-nistp521, curve25519-sha256@libssh.org"
+  sshServerMacs: "hmac-sha2-256-etm@openssh.com, hmac-sha2-256, hmac-sha1, hmac-sha1-96"
+  sshKeyTestPath:
+  sshKeygenPath: "ssh-keygen"
   sshBackupAuthorizedKeys: true
-  sshExposeAnonymous: 
-  minimumKeySizeCheck: 
-  offlineMode: 
-  disableRouterLog: 
-  certFile: custom/https/cert.pem
-  keyFile: custom/https/key.pem
-  staticRootPath: 
-  appDataPath: data
-  enableGzip: 
-  enablePprof: 
-  pprofDataPath: data/tmp/pprof
-  landingPage: home
-  lfsStartServer: 
-  lfsContentPath: data/lfs
-  lfsJwtSecret: 
-  lfsHttpAuthExpiry: 20m
+  sshExposeAnonymous: false
+  minimumKeySizeCheck: false
+  offlineMode: false
+  disableRouterLog: false
+  certFile: "custom/https/cert.pem"
+  keyFile: "custom/https/key.pem"
+  staticRootPath:
+  appDataPath: "data"
+  enableGzip: false
+  enablePprof: false
+  pprofDataPath: "data/tmp/pprof"
+  landingPage: "home"
+  lfsStartServer: false
+  lfsContentPath: "data/lfs"
+  lfsJwtSecret:
+  lfsHttpAuthExpiry: "20m"
   allowGracefulRestarts: true
-  gracefulHammerTime: 60s
+  gracefulHammerTime: "60s"
   startupTimeout: 0
-  staticCacheTime: 6h
-database: 
-  dbType: mysql
-  host: 127.0.0.1:3306
-  name: gitea
-  user: root
-  passwd: 
-  sslMode: disable
-  charset: utf8
-  path: data/gitea.db
+  staticCacheTime: "6h"
+database:
+  dbType: "mysql"
+  host: "127.0.0.1:3306"
+  name: "gitea"
+  user: "root"
+  passwd:
+  sslMode: "disable"
+  charset: "utf8"
+  path: "data/gitea.db"
   sqliteTimeout: 500
   iterateBufferSize: 50
   logSql: true
   dbRetries: 10
-  dbRetryBackoff: 3s
+  dbRetryBackoff: "3s"
   maxIdleConns: 2
-  connMaxLifetime: 3s
+  connMaxLifetime: "3s"
   maxOpenConns: 0
-indexer: 
-  issueIndexerType: bleve
-  issueIndexerPath: indexers/issues.bleve
-  issueIndexerQueueType: levelqueue
-  issueIndexerQueueDir: indexers/issues.queue
-  issueIndexerQueueConnStr: addrs=127.0.0.1:6379 db=0
+indexer:
+  issueIndexerType: "bleve"
+  issueIndexerPath: "indexers/issues.bleve"
+  issueIndexerQueueType: "levelqueue"
+  issueIndexerQueueDir: "indexers/issues.queue"
+  issueIndexerQueueConnStr: "addrs=127.0.0.1:6379 db=0"
   issueIndexerQueueBatchNumber: 20
-  startupTimeout: 30s
-  repoIndexerEnabled: 
-  repoIndexerPath: indexers/repos.bleve
+  startupTimeout: "30s"
+  repoIndexerEnabled: false
+  repoIndexerPath: "indexers/repos.bleve"
   updateBufferLen: 20
   maxFileSize: 1048576
-  repoIndexerInclude: 
-  repoIndexerExclude: 
-admin: 
-  disableRegularOrgCreation: 
-  defaultEmailNotifications: enabled
-security: 
-  installLock: 
-  secretKey: !
+  repoIndexerInclude:
+  repoIndexerExclude:
+admin:
+  disableRegularOrgCreation: false
+  defaultEmailNotifications: "enabled"
+security:
+  installLock: false
+  secretKey: "!"
   loginRememberDays: 7
-  cookieUsername: gitea_awesome
-  cookieRememberName: gitea_incredible
-  reverseProxyAuthenticationUser: X-WEBAUTH-USER
-  reverseProxyAuthenticationEmail: X-WEBAUTH-EMAIL
+  cookieUsername: "gitea_awesome"
+  cookieRememberName: "gitea_incredible"
+  reverseProxyAuthenticationUser: "X-WEBAUTH-USER"
+  reverseProxyAuthenticationEmail: "X-WEBAUTH-EMAIL"
   minPasswordLength: 6
-  importLocalPaths: 
-  disableGitHooks: 
+  importLocalPaths: false
+  disableGitHooks: false
   onlyAllowPushIfGiteaEnvironmentSet: true
-  passwordComplexity: lower,upper,digit,spec
-  passwordHashAlgo: pbkdf2
+  passwordComplexity: "lower,upper,digit,spec"
+  passwordHashAlgo: "pbkdf2"
   csrfCookieHttpOnly: true
-openid: 
+openid:
   enableOpenidSignin: true
-  whitelistedUris: 
-  blacklistedUris: 
-service: 
+  whitelistedUris:
+  blacklistedUris:
+service:
   activeCodeLiveMinutes: 180
   resetPasswdCodeLiveMinutes: 180
-  registerEmailConfirm: 
-  emailDomainWhitelist: 
-  disableRegistration: 
-  allowOnlyExternalRegistration: 
-  requireSigninView: 
-  enableNotifyMail: 
+  registerEmailConfirm: false
+  emailDomainWhitelist:
+  disableRegistration: false
+  allowOnlyExternalRegistration: false
+  requireSigninView: false
+  enableNotifyMail: false
   enableBasicAuthentication: true
-  enableReverseProxyAuthentication: 
-  enableReverseProxyAutoRegistration: 
-  enableReverseProxyEmail: 
-  enableCaptcha: 
-  captchaType: image
-  recaptchaSecret: 
-  recaptchaSitekey: 
-  recaptchaUrl: https://www.google.com/recaptcha/
-  defaultKeepEmailPrivate: 
+  enableReverseProxyAuthentication: false
+  enableReverseProxyAutoRegistration: false
+  enableReverseProxyEmail: false
+  enableCaptcha: false
+  captchaType: "image"
+  recaptchaSecret:
+  recaptchaSitekey:
+  recaptchaUrl: "https://www.google.com/recaptcha/"
+  defaultKeepEmailPrivate: false
   defaultAllowCreateOrganization: true
-  defaultOrgVisibility: public
-  defaultOrgMemberVisible: 
+  defaultOrgVisibility: "public"
+  defaultOrgMemberVisible: false
   defaultEnableDependencies: true
   allowCrossRepositoryDependencies: true
   enableUserHeatmap: true
   enableTimetracking: true
   defaultEnableTimetracking: true
   defaultAllowOnlyContributorsToTrackTime: true
-  noReplyAddress: noreply.%(DOMAIN)s
+  noReplyAddress: "noreply.%(DOMAIN)s"
   showRegistrationButton: true
   showMilestonesDashboardPage: true
   autoWatchNewRepos: true
-  autoWatchOnChanges: 
-webhook: 
+  autoWatchOnChanges: false
+webhook:
   queueLength: 1000
   deliverTimeout: 5
-  skipTlsVerify: 
+  skipTlsVerify: false
   pagingNum: 10
-  proxyUrl: 
-  proxyHosts: 
-mailer: 
-  enabled: 
+  proxyUrl:
+  proxyHosts:
+mailer:
+  enabled: false
   sendBufferLen: 100
-  subjectPrefix: 
-  host: 
-  disableHelo: 
-  heloHostname: 
-  skipVerify: 
-  useCertificate: 
-  certFile: custom/mailer/cert.pem
-  keyFile: custom/mailer/key.pem
-  isTlsEnabled: 
-  from: 
-  user: 
-  passwd: 
-  sendAsPlainText: 
-  mailerType: smtp
-  sendmailPath: sendmail
-  sendmailArgs: 
-cache: 
-  adapter: memory
+  subjectPrefix:
+  host:
+  disableHelo:
+  heloHostname:
+  skipVerify:
+  useCertificate: false
+  certFile: "custom/mailer/cert.pem"
+  keyFile: "custom/mailer/key.pem"
+  isTlsEnabled: false
+  from:
+  user:
+  passwd:
+  sendAsPlainText: false
+  mailerType: "smtp"
+  sendmailPath: "sendmail"
+  sendmailArgs:
+cache:
+  adapter: "memory"
   interval: 60
-  host: 
-  itemTtl: 16h
-session: 
-  provider: memory
-  providerConfig: data/sessions
-  cookieName: i_like_gitea
-  cookieSecure: 
+  host:
+  itemTtl: "16h"
+session:
+  provider: "memory"
+  providerConfig: "data/sessions"
+  cookieName: "i_like_gitea"
+  cookieSecure: false
   enableSetCookie: true
   gcIntervalTime: 86400
   sessionLifeTime: 86400
-picture: 
-  avatarUploadPath: data/avatars
-  repositoryAvatarUploadPath: data/repo-avatars
-  repositoryAvatarFallback: none
-  repositoryAvatarFallbackImage: /img/repo_default.png
+picture:
+  avatarUploadPath: "data/avatars"
+  repositoryAvatarUploadPath: "data/repo-avatars"
+  repositoryAvatarFallback: "none"
+  repositoryAvatarFallbackImage: "/img/repo_default.png"
   avatarMaxWidth: 4096
   avatarMaxHeight: 3072
   avatarMaxFileSize: 1048576
-  gravatarSource: gravatar
-  disableGravatar: 
-  enableFederatedAvatar: 
-attachment: 
+  gravatarSource: "gravatar"
+  disableGravatar: false
+  enableFederatedAvatar: false
+attachment:
   enabled: true
-  path: data/attachments
-  allowedTypes: image/jpeg|image/png|application/zip|application/gzip
+  path: "data/attachments"
+  allowedTypes: "image/jpeg|image/png|application/zip|application/gzip"
   maxSize: 4
   maxFiles: 5
-time: 
-  format: 
-  defaultUiLocation: 
-log: 
-  rootPath: 
-  mode: console
+time:
+  format:
+  defaultUiLocation:
+log:
+  rootPath:
+  mode: "console"
   bufferLen: 10000
-  redirectMacaronLog: 
-  macaron: file
-  routerLogLevel: Info
-  router: console
-  enableAccessLog: 
-  accessLogTemplate: {{.Ctx.RemoteAddr}} - {{.Identity}} {{.Start.Format "[02/Jan/2006:15:04:05 -0700]" }} "{{.Ctx.Req.Method}} {{.Ctx.Req.RequestURI}} {{.Ctx.Req.Proto}}" {{.ResponseWriter.Status}} {{.ResponseWriter.Size}} "{{.Ctx.Req.Referer}}\" \"{{.Ctx.Req.UserAgent}}"
-  access: file
-  level: Info
-  stacktraceLevel: None
-  x: 
-    flags: stdflags
-    expression: 
-    prefix: 
-    colorize: 
-  console: 
-    level: 
-    stderr: 
-  file: 
-    level: 
-    fileName: 
+  redirectMacaronLog: false
+  macaron: "file"
+  routerLogLevel: "Info"
+  router: "console"
+  enableAccessLog: false
+  accessLogTemplate: "{{.Ctx.RemoteAddr}} - {{.Identity}} {{.Start.Format \"[02/Jan/2006:15:04:05 -0700]\" }} \"{{.Ctx.Req.Method}} {{.Ctx.Req.RequestURI}} {{.Ctx.Req.Proto}}\" {{.ResponseWriter.Status}} {{.ResponseWriter.Size}} \"{{.Ctx.Req.Referer}}\" \"{{.Ctx.Req.UserAgent}}\""
+  access: "file"
+  level: "Info"
+  stacktraceLevel: "None"
+  x:
+    flags: "stdflags"
+    expression:
+    prefix:
+    colorize: false
+  console:
+    level:
+    stderr: false
+  file:
+    level:
+    fileName:
     logRotate: true
     maxLines: 1000000
     maxSizeShift: 28
@@ -305,133 +305,133 @@ log:
     maxDays: 7
     compress: true
     compressionLevel: -1
-  conn: 
-    level: 
-    reconnectOnMsg: 
-    reconnect: 
-    protocol: tcp
-    addr: 
-  smtp: 
-    level: 
-    subject: Diagnostic message from server
-    host: 
-    user: 
-    passwd: 
-    receivers: 
-cron: 
+  conn:
+    level:
+    reconnectOnMsg: false
+    reconnect: false
+    protocol: "tcp"
+    addr:
+  smtp:
+    level:
+    subject: "Diagnostic message from server"
+    host:
+    user:
+    passwd:
+    receivers:
+cron:
   enabled: true
-  runAtStart: 
-  update_mirrors: 
-    schedule: @every 10m
-  repo_health_check: 
-    schedule: @every 24h
-    timeout: 60s
-    args: 
-  check_repo_stats: 
+  runAtStart: false
+  updateMirrors:
+    schedule: "@every 10m"
+  repoHealthCheck:
+    schedule: "@every 24h"
+    timeout: "60s"
+    args:
+  checkRepoStats:
     runAtStart: true
-    schedule: @every 24h
-  archive_cleanup: 
+    schedule: "@every 24h"
+  archiveCleanup:
     enabled: true
     runAtStart: true
-    schedule: @every 24h
-    olderThan: 24h
-  sync_external_users: 
-    runAtStart: 
-    schedule: @every 24h
+    schedule: "@every 24h"
+    olderThan: "24h"
+  syncExternalUsers:
+    runAtStart: false
+    schedule: "@every 24h"
     updateExisting: true
-  update_migration_post_id: 
-    schedule: @every 24h
-git: 
-  path: 
-  disableDiffHighlight: 
+  updateMigrationPostId:
+    schedule: "@every 24h"
+git:
+  path:
+  disableDiffHighlight: false
   maxGitDiffLines: 1000
   maxGitDiffLineCharacters: 5000
   maxGitDiffFiles: 100
-  gcArgs: 
+  gcArgs:
   enableAutoGitWireProtocol: true
-  timeout: 
+  timeout:
     default: 360
     migrate: 600
     mirror: 300
     clone: 300
     pull: 300
     gc: 60
-mirror: 
-  defaultInterval: 8h
-  minInterval: 10m
-api: 
+mirror:
+  defaultInterval: "8h"
+  minInterval: "10m"
+api:
   enableSwagger: true
   maxResponseItems: 50
   defaultPagingNum: 30
   defaultGitTreesPerPage: 1000
   defaultMaxBlobSize: 10485760
-oauth2: 
+oauth2:
   enable: true
   accessTokenExpirationTime: 3600
   refreshTokenExpirationTime: 730
-  invalidateRefreshTokens: 
-  jwtSecret: Bk0yK7Y9g_p56v86KaHqjSbxvNvu3SbKoOdOt2ZcXvU
-i18n: 
-  langs: en-US,zh-CN,zh-HK,zh-TW,de-DE,fr-FR,nl-NL,lv-LV,ru-RU,uk-UA,ja-JP,es-ES,pt-BR,pl-PL,bg-BG,it-IT,fi-FI,tr-TR,cs-CZ,sr-SP,sv-SE,ko-KR
-  names: English,简体中文,繁體中文（香港）,繁體中文（台灣）,Deutsch,français,Nederlands,latviešu,русский,Українська,日本語,español,português do Brasil,polski,български,italiano,suomi,Türkçe,čeština,српски,svenska,한국어
-  datelang: 
-    enUs: en
-    zhCn: zh
-    zhHk: zh-HK
-    zhTw: zh-TW
-    deDe: de
-    frFr: fr
-    nlNl: nl
-    lvLv: lv
-    ruRu: ru
-    ukUa: uk
-    jaJp: ja
-    esEs: es
-    ptBr: pt-BR
-    plPl: pl
-    bgBg: bg
-    itIt: it
-    fiFi: fi
-    trTr: tr
-    csCz: cs-CZ
-    srSp: sr
-    svSe: sv
-    koKr: ko
-U2F: 
-other: 
-  showFooterBranding: 
+  invalidateRefreshTokens: false
+  jwtSecret: "Bk0yK7Y9g_p56v86KaHqjSbxvNvu3SbKoOdOt2ZcXvU"
+i18n:
+  langs: "en-US,zh-CN,zh-HK,zh-TW,de-DE,fr-FR,nl-NL,lv-LV,ru-RU,uk-UA,ja-JP,es-ES,pt-BR,pl-PL,bg-BG,it-IT,fi-FI,tr-TR,cs-CZ,sr-SP,sv-SE,ko-KR"
+  names: "English,简体中文,繁體中文（香港）,繁體中文（台灣）,Deutsch,français,Nederlands,latviešu,русский,Українська,日本語,español,português do Brasil,polski,български,italiano,suomi,Türkçe,čeština,српски,svenska,한국어"
+  datelang:
+    enUs: "en"
+    zhCn: "zh"
+    zhHk: "zh-HK"
+    zhTw: "zh-TW"
+    deDe: "de"
+    frFr: "fr"
+    nlNl: "nl"
+    lvLv: "lv"
+    ruRu: "ru"
+    ukUa: "uk"
+    jaJp: "ja"
+    esEs: "es"
+    ptBr: "pt-BR"
+    plPl: "pl"
+    bgBg: "bg"
+    itIt: "it"
+    fiFi: "fi"
+    trTr: "tr"
+    csCz: "cs-CZ"
+    srSp: "sr"
+    svSe: "sv"
+    koKr: "ko"
+u2F:
+other:
+  showFooterBranding: false
   showFooterVersion: true
   showFooterTemplateLoadTime: true
-metrics: 
-  enabled: 
-  token: 
-task: 
-  queueType: channel
+metrics:
+  enabled: false
+  token:
+task:
+  queueType: "channel"
   queueLength: 1000
-  queueConnStr: addrs=127.0.0.1:6379 db=0
-migrations: 
+  queueConnStr: "addrs=127.0.0.1:6379 db=0"
+migrations:
   maxAttempts: 3
   retryBackoff: 3
-ssh: 
-  minimum_key_sizes: 
+ssh:
+  minimumKeySizes:
     ed25519: 256
     ecdsa: 256
     rsa: 2048
     dsa: 1024
-highlight: 
-  mapping: 
-markup: 
-  sanitizer: 
-  asciidoc: 
-    enabled: 
-    fileExtensions: .adoc,.asciidoc
-    renderCommand: asciidoc --out-file=- -
-    isInputFile: 
+highlight:
+  mapping:
+markup:
+  sanitizer:
+  asciidoc:
+    enabled: false
+    fileExtensions: ".adoc,.asciidoc"
+    renderCommand: "asciidoc --out-file=- -"
+    isInputFile: false
 
 replicaCount: 1
 
 image:
-  repository: gitea
+  repository: gitea/gitea
   pullPolicy: IfNotPresent
 
 imagePullSecrets: []
@@ -473,7 +473,7 @@ ingress:
   #    hosts:
   #      - chart-example.local
 
-resources: {}
+resources:
   # We usually recommend not to specify default resources and to leave this as a conscious
   # choice for the user. This also increases chances charts run on environments with little
   # resources, such as Minikube. If you do want to specify resources, uncomment the following

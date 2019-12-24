@@ -10,7 +10,7 @@ const
 
 function convertValue( str){
 	if( str=== null){
-		return "NULL"
+		throw new Error( "unexpected null")
 	}
 	if( str=== true|| str=== false){
 		return str
@@ -24,7 +24,8 @@ function convertValue( str){
 	if ( /^\s*[+-]?\s*\d*\.?\d*\s*$/.test( str)){
 		return str
 	}
-	return `"${str}"`
+	const escaped= str.split("\"").join("\\\"")
+	return `"${escaped}"`
 }
 
 export function walk( o, level= 0){
@@ -32,17 +33,17 @@ export function walk( o, level= 0){
 	for( let key in o){
 		const
 			val= o[ key],
-			valType= typeof val
+			valType= typeof val,
+			camelKey= camel( key)
 		if( valType=== "string"|| valType=== "boolean"){
 			buf.push(
-				`${indenter( level)}${camel( key)}: ${convertValue( val)}\n`
+				`${indenter( level)}${camelKey}: ${convertValue( val)}\n`
 			)
 		}else{
 			buf.push(
 				indenter( level),
-				key,
-				": ",
-				"\n",
+				camelKey,
+				":\n",
 				...walk( val, level+ 1)
 			)
 		}
