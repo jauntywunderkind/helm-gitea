@@ -61,3 +61,11 @@ Create the name of the service account to use
     {{ default "default" .Values.serviceAccount.name }}
 {{- end -}}
 {{- end -}}
+
+{{/*
+via https://stackoverflow.com/a/52466860/72070
+*/}}
+{{- define "gitea.hosts" -}}
+{{- $local := dict "first" true -}}
+{{- range $k, $v := .Values.ingress.hosts -}}{{- if not $local.first -}},{{- end -}}{{- $v.host -}}{{- $_ := set $local "first" false -}}{{- end -}}
+{{- end -}}

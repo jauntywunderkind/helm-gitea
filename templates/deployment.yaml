@@ -169,7 +169,7 @@ spec:
           - name: PROTOCOL
             value: "{{ .Values.server.protocol }}"
           - name: DOMAIN
-            value: "{{ .Values.server.domain }}"
+            value: "{{ include "gitea.hosts" . }}"
           - name: ROOT_URL
             value: "{{ .Values.server.rootUrl }}"
           - name: STATIC_URL_PREFIX

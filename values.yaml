@@ -85,7 +85,8 @@ markdown:
   fileExtensions: ".md,.markdown,.mdown,.mkd"
 server:
   protocol: "http"
-  domain: "localhost"
+  # chart configures domain with the ingress host
+  #domain: "localhost"
   rootUrl: "%(PROTOCOL)s://%(DOMAIN)s:%(HTTP_PORT)s/"
   staticUrlPrefix:
   httpAddr: "0.0.0.0"
