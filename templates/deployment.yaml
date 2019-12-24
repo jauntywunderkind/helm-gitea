@@ -25,6 +25,17 @@ spec:
         - name: {{ .Chart.Name }}
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
+          env:
+          - name: APP_NAME
+            value: {{ .Values.appName }}
+          - name: RUN_MODE
+            value: {{ .Values.runMode }}
+          - name: FORCE_PRIVATE
+            value: {{ .Values.forcePrivate }}
+          - name: DEFAULT_PRIVATE
+            value: {{ .Values.defaultPrivate }}
+          - name: MAX_CREATION_LIMIT
+            value: {{ .Values.maxCreationLimit }}
           image: "{{ .Values.image.repository }}:{{ .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:

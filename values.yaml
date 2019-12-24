@@ -1,3 +1,41 @@
+# https://docs.gitea.io/en-us/config-cheat-sheet/
+
+appName: VoodooArchive
+# can be: prod,*dev,test
+runMode: prod
+
+repository:
+  forcePrivate: false
+  # *last,public,private
+  defaultPrivate: last
+  maxCreationLimit: 4096 # -1
+  pullRequestQueueLength: 1000
+  mirrorQueueLength: 1000
+  preferredLicenses: Apache License 2.0/MIT License
+  disableHttpGit: false
+  useCompatSshUri: false
+  accesControlAllowOrigin:
+  defaultCloseIssuesViaCommitsInAnyBranch: false
+  enablePushCreateUser: false
+  enablePushCreateOrg: false
+  pr:
+    workInProgressPrefixes: WIP:,[WIP]
+    closeKeywords: close,closes,closed,fix,fixes,fixed,resolve,resolves,resolved
+    reopensKeywords: reopen,reopens,reopened
+  issue:
+    lockReasons: Too heated,Off-topic,Resolved,Spam
+  # none, keyid, default
+  signing:
+    key:
+    name:
+    email:
+    # [never,pubkey,twofa,always], can combine other than never/always
+    initialCommit: always
+    wiki: never
+    # [pubkey,twofa,parentsigned,always,never]
+    crudActions: pubkey,twofa,parentsigned
+    merges: 
+
 replicaCount: 1
 
 image:
