@@ -1,0 +1,12 @@
+{
+  "name": "gitea-scripts",
+  "version": "1.0.0",
+  "description": "helper scripts for gitea helm chart",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["gitea"],
+  "author": "jauntywunderkind",
+  "license": "MIT"
+}
