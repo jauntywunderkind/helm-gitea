@@ -19,7 +19,7 @@ export function walk( o, path= "", level= 5){
 			const indention= indenter( level)
 			buf.push(
 				`${indention}- name: ${key}\n`,
-				`${indention}  value: {{ Values${path}.${camelKey} }}\n`
+				`${indention}  value: "{{ Values${path}.${camelKey} }}"\n`
 			)
 		}else{
 			buf.push(

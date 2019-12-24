@@ -8,6 +8,25 @@ const
 	INDENT= "  ",
 	indenter= INDENT.repeat.bind( INDENT)
 
+function convertValue( str){
+	if( str=== null){
+		return "NULL"
+	}
+	if( str=== true|| str=== false){
+		return str
+	}
+	if( /^\s*$/.test( str)){
+		return ""
+	}
+	if( str=== "false"|| str=== "true"){
+		return str
+	}
+	if ( /^\s*[+-]?\s*\d*\.?\d*\s*$/.test( str)){
+		return str
+	}
+	return `"${str}"`
+}
+
 export function walk( o, level= 0){
 	const buf= []
 	for( let key in o){
@@ -16,11 +35,7 @@ export function walk( o, level= 0){
 			valType= typeof val
 		if( valType=== "string"|| valType=== "boolean"){
 			buf.push(
-				indenter( level),
-				camel( key),
-				": ",
-				val|| "",
-				"\n"
+				`${indenter( level)}${camel( key)}: ${convertValue( val)}\n`
 			)
 		}else{
 			buf.push(

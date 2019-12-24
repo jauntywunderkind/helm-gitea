@@ -1,5 +1,5 @@
 # https://docs.gitea.io/en-us/config-cheat-sheet/
-appName: Gitea: Git with a cup of tea
+appName: "Gitea: Git with a cup of tea"
 runUser: git
 runMode: dev
 repository: 
