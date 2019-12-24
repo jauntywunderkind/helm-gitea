@@ -177,7 +177,7 @@ spec:
           - name: HTTP_ADDR
             value: "{{ .Values.server.httpAddr }}"
           - name: HTTP_PORT
-            value: "{{ .Values.server.httpPort }}"
+            value: "80"
           - name: REDIRECT_OTHER_PORT
             value: "{{ .Values.server.redirectOtherPort }}"
           - name: PORT_TO_REDIRECT
