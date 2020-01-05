@@ -59,7 +59,7 @@ ui:
   graphMaxCommitNum: 100
   codeCommentLines: 4
   themeColorMetaTag: "`"
-  maxDisplayFileSize: 8388608
+  maxDisplayFileSize: "8388608"
   showUserEmail: true
   defaultTheme: "gitea"
   themes: "gitea,arc-green"
@@ -101,7 +101,8 @@ server:
   sshDomain: "%(DOMAIN)s"
   sshListenHost:
   sshPort: 22
-  sshListenPort: "%(SSH_PORT)s"
+  #sshListenPort: "%(SSH_PORT)s"
+  sshListenPort: 22
   sshRootPath:
   sshCreateAuthorizedKeysFile: true
   sshServerCiphers: "aes128-ctr, aes192-ctr, aes256-ctr, aes128-gcm@openssh.com, arcfour256, arcfour128"

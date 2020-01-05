@@ -177,7 +177,7 @@ spec:
           - name: HTTP_ADDR
             value: "{{ .Values.server.httpAddr }}"
           - name: HTTP_PORT
-            value: "80"
+            value: "{{ .Values.server.httpPort }}"
           - name: REDIRECT_OTHER_PORT
             value: "{{ .Values.server.redirectOtherPort }}"
           - name: PORT_TO_REDIRECT
@@ -767,7 +767,10 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - name: http
-              containerPort: 80
+              containerPort: {{ .Values.server.httpPort }}
+              protocol: TCP
+            - name: ssh
+              containerPort: {{ .Values.server.sshPort }}
               protocol: TCP
           livenessProbe:
             httpGet:
