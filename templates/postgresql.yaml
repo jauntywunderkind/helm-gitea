@@ -1,0 +1,26 @@
+apiVersion: "acid.zalan.do/v1"
+kind: postgresql
+metadata:
+  name: {{ include "gitea.fullname" . }}
+  #namespace: default
+  labels:
+    {{- include "gitea.labels" . | nindent 4 }}
+spec:
+  databases:
+    foo: gitea # dbname: owner
+  numberOfInstances: 1
+  postgresql:
+    version: "12"
+  selector:
+    {{- include "gitea.selectorLabels" . | nindent 4 }}
+  #teamId: "acid"
+  teamId: "gitea"
+  users:
+    # zalando: # database owner
+    gitea-admin:  # database owner
+    - superuser
+    - createdb
+    gitea-app: []  # role for application foo
+  volume:
+    size: 512Mi
+
