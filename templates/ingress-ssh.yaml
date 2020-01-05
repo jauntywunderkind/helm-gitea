@@ -1,4 +1,4 @@
-{{- if .Values.ingress.enabled -}}
+{{- if .Values.ingress.enabledSsh -}}
 {{- $fullName := include "gitea.fullname" . -}}-ssh
 {{- $svcPort := .Values.service.portSsh -}}
 {{- if semverCompare ">=1.14-0" .Capabilities.KubeVersion.GitVersion -}}
