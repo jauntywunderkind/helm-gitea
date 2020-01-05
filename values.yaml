@@ -465,6 +465,7 @@ service:
   portHttp: 80
 
 ingress:
+  enabled: true
   enabledSsh: true
   enabledHttp: true
   annotations: {}
